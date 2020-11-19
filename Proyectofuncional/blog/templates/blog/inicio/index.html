@@ -1,0 +1,112 @@
+{% extends "blog/base/base.html" %}
+{% block contenido %}
+{% load static %}
+		<!-- Portada -->
+		<section id="intro" class="picture1 textwhite" style="background-image: url({% static '/img/nvidia1.jpg'%});">
+			<br><br><br><br><br><br><br><br><br><br>
+			<h1 class="textgold monserrat">
+			Lo mejor en Gama Alta.
+			</h1>
+			<br>
+			<h2 class="textwhite poppins">
+			La rapidez de la gama alta, nuevas tarjetas RTX de Nvidia.	
+			</h2>
+			<br>
+			<h2 class="textwhite poppins">Valor comenzando desde: $689.99 USD.
+			</h2>
+		<br>
+		</section>
+
+		<!-- Carrusel -->
+		<section id="carousel" class="darkblue poppins textwhite flexcontainer">
+			<div id="c_1" class="flex1">
+				<div class="carousel">
+					<input class="c_active" type="radio" name="carousel" id="p6" checked="checked"/>
+					<input class="c_active" type="radio" name="carousel" id="p7"/>
+					<input class="c_active" type="radio" name="carousel" id="p8"/>
+					<input class="c_active" type="radio" name="carousel" id="p9"/>
+					<input class="c_active" type="radio" name="carousel" id="p10"/>
+					<div class="c_arrows"><label class="c_arrow c_arrow_left" for="p10"></label><label class="c_arrow c_arrow_right" for="p7"></label></div>
+					<div class="c_arrows"><label class="c_arrow c_arrow_left" for="p6"></label><label class="c_arrow c_arrow_right" for="p8"></label></div>
+					<div class="c_arrows"><label class="c_arrow c_arrow_left" for="p7"></label><label class="c_arrow c_arrow_right" for="p9"></label></div>
+					<div class="c_arrows"><label class="c_arrow c_arrow_left" for="p8"></label><label class="c_arrow c_arrow_right" for="p10"></label></div>
+					<div class="c_arrows"><label class="c_arrow c_arrow_left" for="p9"></label><label class="c_arrow c_arrow_right" for="p6"></label></div>
+					<div class="c_slides">
+						<li class="c_slide" style="background-image: url({% static '/img/processor1.jpg'%});">
+							<h1>Procesadores</h1></li>
+						<li class="c_slide" style="background-image: url({% static '/img/liquidcooling.jpg'%});">
+							<h1>Refrigeraciones Líquidas</h1></li>
+						<li class="c_slide" style="background-image: url({% static '/img/monitors.jpg'%});">
+							<h1>Monitores</h1></li>
+						<li class="c_slide" style="background-image: url({% static '/img/keyboard.jpg'%});">
+							<h1>Teclados</h1></li>
+						<li class="c_slide" style="background-image: url({% static '/img/mouse1.jpg'%});">
+							<h1>Mouses</h1></li>
+					</div>
+					<div class="c_buttons">
+						<label class="c_button" for="p6"></label>
+						<label class="c_button" for="p7"></label>
+						<label class="c_button" for="p8"></label>
+						<label class="c_button" for="p9"></label>
+						<label class="c_button" for="p10"></label>
+					</div>
+				</div>
+			</div>
+
+			<div id="c_2" class="flex1">
+				<div class="carousel">
+					<input class="c_active" type="radio" name="activator" id="p1" checked="checked"/>
+					<input class="c_active" type="radio" name="activator" id="p2"/>
+					<input class="c_active" type="radio" name="activator" id="p3"/>
+					<input class="c_active" type="radio" name="activator" id="p4"/>
+					<input class="c_active" type="radio" name="activator" id="p5"/>
+					<div class="c_arrows"><label class="c_arrow c_arrow_left" for="p5"></label><label class="c_arrow c_arrow_right" for="p2"></label></div>
+					<div class="c_arrows"><label class="c_arrow c_arrow_left" for="p1"></label><label class="c_arrow c_arrow_right" for="p3"></label></div>
+					<div class="c_arrows"><label class="c_arrow c_arrow_left" for="p2"></label><label class="c_arrow c_arrow_right" for="p4"></label></div>
+					<div class="c_arrows"><label class="c_arrow c_arrow_left" for="p3"></label><label class="c_arrow c_arrow_right" for="p5"></label></div>
+					<div class="c_arrows"><label class="c_arrow c_arrow_left" for="p4"></label><label class="c_arrow c_arrow_right" for="p1"></label></div>
+					<div class="c_slides">
+						<li class="c_slide" style="background-image: url({% static '/img/rtx3000.jpg'%});">
+							<h1>Tarjetas graficas</h1></li>
+						<li class="c_slide" style="background-image: url({% static '/img/motherboard.jpg'%});">
+							<h1>Placas Madres</h1></li>
+						<li class="c_slide" style="background-image: url({% static '/img/case1.jpg'%});">
+							<h1>Cases</h1></li>
+						<li class="c_slide" style="background-image: url({% static '/img/ram1.jpg'%});">
+							<h1>Memorias Ram</h1></li>
+						<li class="c_slide" style="background-image: url({% static '/img/headphones.jpg'%});">
+							<h1>Audífonos</h1></li>
+					</div>
+					<div class="c_buttons">
+						<label class="c_button" for="p1"></label>
+						<label class="c_button" for="p2"></label>
+						<label class="c_button" for="p3"></label>
+						<label class="c_button" for="p4"></label>
+						<label class="c_button" for="p5"></label>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Cualidades -->
+		<section id="cualidades" class="monserrat aligncenter" style="background-image: url({% static '/img/wallpaper2.jpg'%});">
+			<div class="flexcontainer">
+				<div class="flex1">
+					<img src="{% static '/img/freeshipping.png'%}" alt=""><br><br>
+					<h2 class="textwhite">Envío Gratis</h2> 
+				</div>
+				<div class="flex1">
+					<img src="{% static '/img/fastdelivery.jpg'%}" alt="" class="imgredondas"><br><br>
+					<h2 class="textwhite">Envío rápido</h2>
+				</div>
+				<div class="flex1">
+					<img  src="{% static '/img/plentypackages.jpg'%}" alt="" class="imgredondas"><br><br>
+					<h2 class="textwhite">Gran Disponibilidad de Stock</h2>
+				</div>
+				<div class="flex1">
+					<img class="flex1" src="{% static '/img/bestprice.png'%}" alt=""><br><br>
+					<h2 class="textwhite">Mejor Precio</h2>
+				</div>
+			</div>
+		</section>
+{% endblock contenido %}

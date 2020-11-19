@@ -1,0 +1,56 @@
+{% extends "blog/base/base.html" %}
+{% block contenido %}
+{% load static %}
+<div class="main_contenededor black" style="background-image: url({% static '/img/background6.jpg'%});">
+  <br><br><br><br><br><br><br><br><br><br>
+  <form method="post" class="form-signin">
+    {% csrf_token %}
+    <h1 class="h3 mb-3 font-weight-normal textwhite poppins">Administrar Cuenta</h1>
+    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Corre electrónico" required autofocus value="{{account_form.initial.email}}">
+
+    <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Nombre de Usuario" required value="{{account_form.initial.username}}">
+    <p>
+      {% for field in account_form %}
+        {% for error in field.errors %}
+              <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      {% endfor %}
+      {% if account_form.non_field_errors %}
+        <div style="color: red">
+          <p>{{account_form.non_field_errors}}</p>
+        </div>
+      {% endif %}
+
+      {% if success_msg %}
+        <p class="aligncenter textwhite">{{ success_msg }}</p>
+      {% endif %}
+    </p>
+    <button class="btn btn-lg btn-primary btn-block plomo color_borde_negro" type="submit">Guardar Cambios</button>
+  </form>
+
+
+  <div class="d-flex flex-column">
+     <a class='m-auto textwhite poppins' href="{% url 'password_change' %}">Cambiar Contraseña</a>
+  </div>
+
+  <div class="container mt-4 p-4">
+    <div class="row">
+      <div class="blog-posts">
+        <h3 class="mb-3 font-weight-normal textwhite aligncenter">Blog posts:</h3>
+        {% if blog_posts %}
+        <ul>
+          {% for post in blog_posts %}
+            <a href="{% url 'blog:detail' post.slug %}" style="text-decoration: none;">
+              <li class="list-group-item aligncenter poppins plomo lightblue">{{post}}</li>
+            </a>
+          {% endfor %}
+        </ul>
+        {% else%}
+          <p class="poppins textwhite aligncenter">No tienes blog posts. Crea un post <a href="{% url 'blog:create' %}">aquí</a>.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock contenido %}

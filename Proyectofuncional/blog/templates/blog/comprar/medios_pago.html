@@ -1,0 +1,17 @@
+{% extends "blog/base/base.html" %}
+{% block contenido %}
+{% load static %}
+<div class="main_contenededor black" style="background-image: url({% static '/img/background6.jpg'%});">
+	<br><br><br><br><br><br><br><br><br><br>
+	<h1 class="aligncenter lightblue poppins">Métodos de pago aceptados<br></h1>
+	<br>
+	<p class="aligncenter textwhite poppins">
+		Puedes utilizar tus tarjetas de crédito bancarias pertenecientes al Banco Santander, BCI, Banco Estado, 
+		<br>
+        Scotiabank y Banco de Chile, pagando hasta 24 cuotas sin interés. Otros bancos hasta 12 cuotas sin interés.
+     <br><br>
+     <img src="{% static '/img/medios_pago.png'%}">
+ 	</p>
+
+</div>
+{% endblock contenido %}

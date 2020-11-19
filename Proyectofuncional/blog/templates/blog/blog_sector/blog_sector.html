@@ -1,0 +1,66 @@
+{% extends "blog/base/base.html" %}
+
+{% block contenido %}
+{% load static %}
+<div class="main_contenededor black" style="background-image: url({% static '/img/background6.jpg'%});">
+	<br><br><br><br><br><br><br><br><br><br>
+	<div class="container">
+		<div class="row poppins textwhite">
+
+			<!-- Anuncios del Blog -->
+			<div class="right-column col-lg-7 offset-lg-1">
+
+				<!-- Barra de crear posts cuando la dimensión de visualización es muy pequeña -->
+				<div class="d-lg-none mb-3">
+					<div class="card m-auto d-flex flex-column p-3">
+						<img class="img-fluid d-block m-auto pb-2" src="{% static 'favicon/android-chrome-512x512.png' %}" width="72" height="72">
+						<p class="lead aligncenter">A'illnovo</p>
+						<p class="m-auto"><a class="btn btn-primary plomo color_borde_negro" href="{% url 'blog:create' %}">Crear una nueva publicación</a></p>
+					</div>
+				</div>
+				<!-- -------------------------------------------------------------------------- -->
+				<div class="search-bar mt-sm-2">
+					<form method="get">
+						<input type="text" class="form-control" name="q" id="id_buscar" placeholder="Busca publicaciones aquí...">
+					</form>
+				</div>
+				<br><br>
+
+				<!-- Blog posts-->
+				{% if blog_posts %}
+					{% for post in blog_posts %}
+						<div class="blog-post-container">
+							{% include 'snippets/blog_post_snippet.html' with blog_post=post %}
+						</div>
+					{% endfor %}
+				{% else %}
+					<div class="blog-post-container">
+						{% include 'snippets/blog_post_snippet.html' with query=query %}
+					</div>
+
+				{% endif %}
+				<!-- End Blog posts-->
+			</div>
+			<!-- Fin anuncios del Blog -->
+
+
+			<!-- Columna de crear post a la derecha, cuando las dimensiones de visualización lo permiten  -->
+			<div class="right-column col-lg-3 d-lg-flex d-none flex-column">
+
+				<div class="card create-post-bar d-flex flex-column p-3">
+					<img class="img-fluid d-block m-auto pb-2" src="{% static 'favicon/android-chrome-512x512.png' %}" width="72" height="72">
+					<p class="lead aligncenter">A'illnovo</p>
+					<p class="m-auto"><a class="btn btn-primary plomo color_borde_negro" href="{% url 'blog:create' %}">Crear una nueva publicación</a></p>
+				</div>
+			
+			</div>
+			<!-- ----------------------------------------------------------------------------------------- -->
+
+		</div>
+	</div>
+	<script type="text/javascript">
+		document.getElementById("id_buscar").value="{{query}}"
+	</script>
+
+</div>	
+{% endblock contenido %}

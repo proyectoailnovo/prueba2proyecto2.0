@@ -1,0 +1,78 @@
+{% extends "blog/base/base.html" %}
+{% block contenido %}
+{% load static %}
+<div class="main_contenededor black" style="background-image: url({% static '/img/background6.jpg'%});min-height: calc( 100vh - 253px );">
+	<br><br><br><br><br><br><br><br><br><br>
+	    <!-- input tag -->
+    <input class="poppins textwhite" id="searchbar" oninput="search_product()" type="text" name="search" placeholder="Busque sus productos.">
+	<button id="buybtton" disabled>Comprar Productos</button>
+	<br><br><br>
+	<div class="item">
+		<img src="{% static '/img/ryzen3000.jpg'%}" alt="">
+		<input class="checkbox" type="checkbox" onclick="refreshcheckbox()">
+		<p class="title">AMD Ryzen 9 3950X 16-Core, 32-Thread Unlocked Desktop Processor, Sin Cooler.</p>
+		<p class="description">Acerca de este Artículo:<br>
+		Cuenta con 16 núcleos y 32 subprocesos de procesamiento, la mayor potencia de procesamiento que puede obtener en el escritorio convencional.</p>
+		<p class="state">Estado: Nuevo.</p>
+		<form><input id="num1" class="contador" type="number" name="" value="1" min="1" max="30" required oninput="bruteforce(1)"></form>
+		<p class="quantity poppins">Cantidad.</p>
+		<p class="price">$ 669.99 USD, con IVA incluído.</p>
+		<p class="comprar"><a href="">Comprar</a></p>
+
+		
+	</div>
+		<div class="item">
+			<img src="{% static '/img/rtx2060.jpg' %}" alt="">
+			<input class="checkbox" type="checkbox" onclick="refreshcheckbox()">
+			<p class="title">ASUS ROG STRIX GeForce RTX 2060 S Overclocked 6G GDDR6 HDMI DP 1.4 Gaming Graphics Card (ROG-STRIX-RTX-2060-O6G)</p>
+			<p class="description">Acerca de este Artículo:<br>
+			Desarrollado por Nvidia Turing con reloj boost de 1860 mhz, núcleos de 1920 cuda y memoria gddr6 de 6 gb.</p>
+			<p class="state">Estado: Nuevo.</p>
+			<form><input id="num2" class="contador" type="number" name="" value="1" min="1" max="30" required oninput="bruteforce(2)"></form>
+			<p class="quantity poppins">Cantidad.</p>
+			<p class="price">$ 249.99 USD, con IVA incluído.</p>
+			<p class="comprar"><a href="">Comprar</a></p>
+	</div>
+		<div class="item">
+			<img src="{% static '/img/2080ti.jpg' %}" alt="">
+			<input class="checkbox" type="checkbox" onclick="refreshcheckbox()">
+			<p class="title">EVGA 11G-P4-2487-KR GeForce RTX 2080 Ti Ftw3 Ultra, Overclocked, 2.75 Slot Extreme Cool Triple + iCX2, 65C Gaming, RGB, Metal Backplate, 11GB GDDR6</p>
+			<p class="description">Acerca de este Artículo:<br>
+			Reloj de impulso real: 1755 MegaHertz; Detalle de la memoria: 11264 MB GDDR6; Disfruta de un juego fluido y sin lágrimas con frecuencias de actualización de hasta 240 Hz, más HDR y más. Esta es la pantalla de juegos definitiva y el equipo de referencia para los jugadores entusiastas.</p>
+			<p class="state">Estado: Nuevo.</p>
+			<form><input id="num3" class="contador" type="number" name="" value="1" min="1" max="30" required oninput="bruteforce(3)"></form>
+			<p class="quantity poppins">Cantidad.</p>
+			<p class="price">$ 569.99 USD, con IVA incluído.</p>
+			<p class="comprar"><a href="">Comprar</a></p>
+	</div>
+		<div class="item">
+			<img src="{% static '/img/corsair1.jpg' %}" alt="">
+			<input class="checkbox" type="checkbox" onclick="refreshcheckbox()">
+			<p class="title">Corsair Vengeance RGB Pro 16GB (2x8GB) DDR4 3600 (PC4-28800) C18 Desktop Memory – Black</p>
+			<p class="description">Acerca de este Artículo:<br>
+			La memoria DDR4 de alto rendimiento ilumina su sistema con una iluminación vívida y animada de diez LED RGB ultrabrillantes, direccionables individualmente por módulo.</p>
+			<p class="state">Estado: Nuevo.</p>
+			<form><input id="num4" class="contador" type="number" name="" value="1" min="1" max="30" required oninput="bruteforce(4)"></form>
+			<p class="quantity poppins">Cantidad.</p>
+			<p class="price">$ 75.99 USD, con IVA incluído.</p>
+			<p class="comprar"><a href="">Comprar</a></p>
+	</div>
+		<div class="item">
+			<img src="{% static '/img/h510.jpg' %}" alt="">
+			<input class="checkbox" type="checkbox" onclick="refreshcheckbox()">
+			<p class="title">Gabinete NZXT H510 Compact ATX Mid-Tower PC Gaming Case.</p>
+			<p class="description">
+				Acerca de este Artículo:
+				<br>
+				-Nuevas características: puerto USB tipo C de E / S frontal y panel lateral de vidrio templado con instalación de un solo tornillo.
+				<br>
+				-Gestión de cables mejorada: nuestro kit de enrutamiento de cables patentado con canales y correas preinstalados hace que el cableado sea fácil e intuitivo.</p>
+			<p class="state">Estado: Nuevo.</p>
+			<form><input id="num5" class="contador" type="number" name="" value="1" min="1" max="30" required oninput="bruteforce(5)"></form>
+			<p class="quantity poppins">Cantidad.</p>
+			<p class="price">$ 63.99 USD, con IVA incluído.</p>
+			<p class="comprar"><a href="">Comprar</a></p>
+	</div>
+	<p class="mensajevacio textwhite poppins">No se han encontrado los productos esperados.</p>
+</div>
+{% endblock contenido %}

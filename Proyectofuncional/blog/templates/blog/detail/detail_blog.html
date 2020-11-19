@@ -1,0 +1,26 @@
+{% extends "blog/base/base.html" %}
+{% block contenido %}
+{% load static %}
+<div class="main_contenededor black" style="background-image: url({% static '/img/background6.jpg'%});">
+	<br><br><br><br><br><br><br><br><br><br>
+	<div class="container" id="detalleblog">
+		<div class="row textwhite poppins">
+			<!--Blog post-->
+			<div class="card m-auto" id="tarjeta_detalle">
+				<img class="card-img-top redondeo-imagen"src="{{blog_post.image.url}}">
+				<div class="card-body my-2">
+					<h2 class="card-title lightblue">{{blog_post.title}}</h2>
+					<p class="card-text">{{blog_post.body|linebreaks}}</p>
+					{% if blog_post.author == request.user %}
+						<a href="{% url 'blog:edit' blog_post.slug %}" class="btn btn-primary plomo color_borde_negro">Editar</a>
+					{% endif %}
+				</div>
+				<div class="card-footer text-muted">
+					Actualizado el {{blog_post.date_updated}} por {{blog_post.author}}
+				</div>
+				<!--Blog post-->
+			</div>
+		</div>
+	</div>
+</div>	
+{% endblock contenido %}

@@ -1,0 +1,38 @@
+{% extends "blog/base/base.html" %}
+{% block contenido %}
+{% load static %}
+<div class="main_contenededor black"style="background-image: url({% static '/img/background6.jpg'%});">
+	<br><br><br><br><br><br><br><br><br><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 offset-lg-1">
+				<form class="create-form" method="post" enctype="multipart/form-data">{% csrf_token %}
+
+					<!-- title -->
+					<div class="form-group">
+						<label for="id_title" class="poppins textwhite">Título:</label>
+						<input class="form-control" type="text" name="title" id="id_title" placeholder="Título" required autofocus>
+					</div>
+
+					<!-- Body -->
+					<div class="form-group">
+						<label for="id_body" class="poppins textwhite">Contenido:</label>
+						<textarea class="form-control" rows="10" type="text" name="body" id="id_body" placeholder="Este blog es acerca de..." required></textarea>
+					</div>
+
+					<!-- Image -->
+					<div class="form-group">
+						<label for="id_image" class="poppins textwhite">Imagen:</label>
+						<input  class="textwhite poppins"type="file" name="image" id="id_image" accept="image/*" required>
+					</div>
+
+					<!-- Submit btn -->
+					<button class="submit-button btn btn-lg btn-primary btn-block plomo color_borde_negro" type="submit">Publicar</button>
+					<br>
+  					<a class="decoraciones textwhite" href="{% url 'sector_blog1' %}"><button class="boton_cancel btn btn-lg btn-primary btn-block plomo color_borde_negro" type="button">Cancelar</button></a>  
+				</form>	
+			</div>
+		</div>
+	</div>
+	</div>	
+{% endblock contenido %}

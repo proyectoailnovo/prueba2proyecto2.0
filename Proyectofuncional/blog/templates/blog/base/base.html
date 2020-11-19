@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>A'Illnovo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	{% include 'snippets/header.html' %}
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<script type="text/javascript" src="{% static '/js/main.js' %}"></script>
+	
+</head>
+<body>
+	<!-- Cabecera -->
+	<header id="header" class="flexcontainer darkbluetransparent alignright">
+		<div id="cuenta_user" class="flex1 alignleft poppins">
+			{% if request.user.is_authenticated %}
+				<p>Bienvenido, {{request.user.username}}.</p>
+			{% endif %}
+		</div>
+		<div class="flex1 flexcontainer" id="nav_bar1">
+			<button type="button" class="btn btn-success poppins">
+				Inicio
+				<ul>
+					<li><a class="decoraciones textwhite" href="{% url '' %}">Portada</a>
+					</li>
+					<li><a class="decoraciones textwhite"href="{% url 'sector_blog1' %}">Blogs</a></li>
+					<li><a class="decoraciones textwhite" href="{% url 'galeriaimgp' %}">Galería</a></li>
+				</ul>
+			</button>
+			<button type="button" class="btn btn-success poppins">
+				Quiénes Somos
+				<ul>
+					<li><a class="decoraciones textwhite"href="{% url 'historiapag1' %}">Historia</a></li>
+				</ul>
+			</button>
+			<button type="button" class="btn btn-success poppins" >
+				Comprar Productos
+				<ul>
+					<li><a class="decoraciones textwhite" href="{% url 'comprar-pag' %}">Buscar Productos</a></li>
+					<li><a class="decoraciones textwhite" href="{% url 'medio_de_pago' %}">Métodos de Pago</a></li>
+				</ul>
+			</button>
+			<button type="button" class="btn btn-success poppins">
+				Contáctanos
+				<ul><li>Soporte</li><li>Email</li></ul>
+			</button>
+			<button type="button" class="btn btn-success poppins">
+				Cuenta
+				<ul>
+					{% if request.user.is_authenticated %}
+					<li><a class="decoraciones textwhite" href="{% url 'account' %}">Administrar</a></li>
+					<li><a class="decoraciones textwhite" href="{% url 'logout' %}">Cerrar sesión</a></li>
+					{% else %}
+					<li><a class="decoraciones textwhite" href="{% url 'register' %}">Registrarse</a></li>
+					<li><a class="decoraciones textwhite" href="{% url 'login' %}">Iniciar Sesión</a></li>
+					{% endif %}
+			</button>
+		</div>
+		
+	</header>
+	<div class="main_contenededor">
+	{% block contenido %}{% endblock %}
+	</div>
+
+	{% include 'snippets/footer.html' %}
+</body>
+</html>

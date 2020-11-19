@@ -1,0 +1,33 @@
+{% extends "blog/base/base.html" %}
+{% block contenido %}
+{% load static %}
+<div class="main_contenededor black" style="background-image: url({% static '/img/background6.jpg'%});">
+	<br><br><br><br><br><br><br><br><br><br>
+	<form method="post" class="form-signin">
+		{% csrf_token %}
+	  <h1 class="h3 mb-3 font-weight-normal poppins textwhite">Iniciar Sesión.</h1>
+
+	  <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Correo electrónico" required autofocus>
+	  <br>
+	  <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Contraseña" required>
+	  
+	  <p>
+	    {% for field in login_form %}
+	      {% for error in field.errors %}
+	            <p class="color_rojo">{{ error }}</p>
+	      {% endfor %}
+	    {% endfor %}
+	    {% if login_form.non_field_errors %}
+	      <div class="poppins aligncenter color_rojo">
+	        <p>{{login_form.non_field_errors}}</p>
+	      </div>
+	    {% endif %}
+	  </p>
+
+	  <button class="btn btn-lg btn-primary btn-block poppins plomo color_borde_negro" id="bton_login"type="submit">Ingresar</button>
+	</form>
+	<div class="d-flex flex-column">
+   		<a class='m-auto textwhite poppins' href="{% url 'password_reset' %}">¿Ha olvidado su contraseña?</a>
+	</div>
+</div>
+{% endblock contenido %}

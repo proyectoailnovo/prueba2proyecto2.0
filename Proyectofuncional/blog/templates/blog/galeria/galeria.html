@@ -1,0 +1,23 @@
+{% extends "blog/base/base.html" %}
+{% block contenido %}
+{% load static %}
+<div class="main_contenededor black" style="background-image: url({% static '/img/background10.jpg'%});">
+	<br><br><br><br><br><br><br><br><br><br>
+	<center>
+		<h1 class="poppins textwhite aligncenter" style="font-size: 45px;">Galería de Setups</h1>
+		<br>
+	</center>
+	<div class="container" id="galeria_container">
+		<div class="aligncenter">
+			{% for results in Imggal %}
+			<div class="picture_gal">
+				<h1 class="poppins textgold pic-title">{{results.imgtitle}}</h1>
+				<img class="zoom redondeo-imagen"src="{{results.img.url}}"  alt="{{results.imgtitle}}" title="{{results.imgtitle}}">
+				<br><br>
+				<h1 class="poppins textwhite pic-desc">{{results.imgdesc}}</h1>
+				<hr>
+			</div>
+			{% endfor %}
+		</div>
+	</div>	
+{% endblock contenido %}
