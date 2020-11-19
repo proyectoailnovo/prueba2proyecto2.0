@@ -40,7 +40,7 @@
         {% if blog_posts %}
         <ul>
           {% for post in blog_posts %}
-            <a href="{% url 'blog:detail' post.slug %}" style="text-decoration: none;">
+            <a class="decoraciones" href="{% url 'blog:detail' post.slug %}">
               <li class="list-group-item aligncenter poppins plomo lightblue">{{post}}</li>
             </a>
           {% endfor %}
