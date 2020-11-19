@@ -19,7 +19,7 @@ class TestForms(SimpleTestCase):
     def test_form_contacto_validdata(self):
         form = FormularioContacto(data={
             'asunto':'problema comprar',
-            'email':'hola@live.com',
+
             'mensaje': 'no funciona nada'
         })
 
@@ -29,7 +29,7 @@ class TestForms(SimpleTestCase):
         form = FormularioContacto(data={})
 
         self.assertFalse(form.is_valid())
-        self.assertEquals(len(form.errors), 3)
+        self.assertEquals(len(form.errors), 2)
 
 #Test blog
 
@@ -77,7 +77,7 @@ class TestForms3(TestCase):
 
 class Testblank2(TestCase):
     def test_form_validation_for_blank_items(self):
-        form = AccountAuthenticationForm(data={'password': ''})
+        form = AccountAuthenticationForm(data={'password': 'sdasd23'})
         self.assertFalse(form.is_valid())
         self.assertEqual(
         form.errors['password'],["este campo es obligatorio"]
@@ -88,8 +88,8 @@ class Testblank2(TestCase):
 
 class Testblank(TestCase):
     def UpdateBlogPostForm(self):
-        form = AccountUpdateForm(data={'username': ''})
+        form = AccountUpdateForm(data={'title': 'sdasdad23'})
         self.assertFalse(form.is_valid())
         self.assertEqual(
-        form.errors['username'],["esto no puede estar vacio"]
+        form.errors['title'],["esto no puede estar vacio"]
         )
