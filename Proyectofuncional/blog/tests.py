@@ -19,7 +19,6 @@ class TestForms(SimpleTestCase):
     def test_form_contacto_validdata(self):
         form = FormularioContacto(data={
             'asunto':'problema comprar',
-
             'mensaje': 'no funciona nada'
         })
 
@@ -50,10 +49,10 @@ class TestModel2(TestCase):
 
 class TestCreateBlogPostFormblank(TestCase):
     def test_form_validation_for_blank_items(self):
-        form = CreateBlogPostForm(data={'title': ''})
+        form = CreateBlogPostForm(data={'title': '','body': '','image': ''})
         self.assertFalse(form.is_valid())
         self.assertEqual(
-        form.errors['title'],["este campo es obligatorio"]
+        form.errors['title','body','image'],["este campo es obligatorio"]
         )
 
 
@@ -77,7 +76,7 @@ class TestForms3(TestCase):
 
 class Testblank2(TestCase):
     def test_form_validation_for_blank_items(self):
-        form = AccountAuthenticationForm(data={'password': 'sdasd23'})
+        form = AccountAuthenticationForm(data={'password': ''})
         self.assertFalse(form.is_valid())
         self.assertEqual(
         form.errors['password'],["este campo es obligatorio"]
@@ -88,8 +87,28 @@ class Testblank2(TestCase):
 
 class Testblank(TestCase):
     def UpdateBlogPostForm(self):
-        form = AccountUpdateForm(data={'title': 'sdasdad23'})
+        form = AccountUpdateForm(data={'title': ''})
         self.assertFalse(form.is_valid())
         self.assertEqual(
         form.errors['title'],["esto no puede estar vacio"]
         )
+
+
+class CommentFormTest(TestCase):
+
+    def setUp(self):
+        user = get_user_model().objects.create_user('zoidberg')
+        self.entry = Entry.objects.create(author=user, title="My entry title")
+
+    def test_valid_data(self):
+        form = CreateBlogPostForm({
+            'title': "asddsadasd",
+            'body': "asdasdasdas",
+            'image': "../static/img/2080ti.jpg",
+        }, entry=self.entry)
+        self.assertTrue(form.is_valid())
+        fields = form.save()
+        self.assertEqual(fields.title, "asddsadasd")
+        self.assertEqual(fields.body, "asdasdasdas")
+        self.assertEqual(fields.image, "../static/img/2080ti.jpg")
+        self.assertEqual(fields.entry, self.entry)
