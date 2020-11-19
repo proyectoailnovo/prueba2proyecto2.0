@@ -5,7 +5,8 @@ from django.db import models
 import unittest
 from datetime import datetime
 from http import HTTPStatus
-from blog.forms import FormularioContacto, CreateBlogPostForm, UpdateBlogPostForm
+from blog.forms import CreateBlogPostForm, UpdateBlogPostForm
+from soporte.forms import FormularioContacto
 from blog.models import BlogPost, Imggal
 from account.forms import Registrarseform, AccountAuthenticationForm, AccountUpdateForm
 from account.models import AccountManager

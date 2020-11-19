@@ -20,6 +20,10 @@ from blog.views import(
     blog,
     medio_pago,
     )
+from soporte.views import(
+    soporte_pag,
+)
+
 urlpatterns = [
     
     path('admin/', admin.site.urls),
@@ -63,6 +67,8 @@ urlpatterns = [
 
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(template_name='../templates/account/registration/password_reset_complete.html'),
      name='password_reset_complete'),
+
+    path('soporte/', soporte_pag, name='soporte'),
 
 
 ]
