@@ -9,7 +9,7 @@ Para los administradores, las herramientas para manejar la información sobre lo
 
 Si bien el apartado de compraventa es un elemento muy importante, aún se encuentra en desarrollo. Es un elemento crucial que no debe presentar falencias, por lo que su presentación en este momento representa una negligencia.
 
-
+*Test ubicados en blog/test.py
 Resultado pruebas
 
 De las pruebas diseñadas 7
