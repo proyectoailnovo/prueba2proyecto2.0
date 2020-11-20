@@ -46,6 +46,7 @@ class TestModel2(TestCase):
         self.data=Imggal.objects.create(imgtitle='fff')
         self.assertEqual(str(self.data),'fff')
 
+#Test account
 
 class TestForms3(TestCase):
 
