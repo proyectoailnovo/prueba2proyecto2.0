@@ -7,7 +7,7 @@ El proyecto a desarrollar tiene por propósito principal la venta de componentes
 
 Para los administradores, las herramientas para manejar la información sobre los usuarios, posts u otras cuestiones de orden administrativo
 
-Si bien el apartado de compraventa es un elemento muy importante, aún se encuentra en desarrollo. Es un elemento crucial que no debe presentar falencias, por lo que su presentación en este momento representa una negligencia. Por lo anterior, preferimos garantizar que el mismo estará disponible para la entrega final de este proyecto, de forma completa y suficiente.
+Si bien el apartado de compraventa es un elemento muy importante, aún se encuentra en desarrollo. Es un elemento crucial que no debe presentar falencias, por lo que su presentación en este momento representa una negligencia.
 
 
 Resultado pruebas
