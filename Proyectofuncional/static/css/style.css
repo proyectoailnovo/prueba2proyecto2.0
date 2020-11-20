@@ -825,3 +825,15 @@ z-index:100;
 	border-radius: 10px;
 	background-color: transparent!important;
 }
+/*Formulario de Contacto*/
+.contacto_mail input, .contacto_mail textarea{
+	background-color: transparent;
+    color: white;
+    padding: 8px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    border-color: white;
+}
+.contacto_mail label{
+	margin-right: 15px;
+}
